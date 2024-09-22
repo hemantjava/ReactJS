@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function ButtonComp({ onButtonClick }) {
   const buts = [
@@ -32,3 +33,6 @@ export default function ButtonComp({ onButtonClick }) {
     </div>
   );
 }
+ButtonComp.propTypes = {
+  onButtonClick: PropTypes.func.isRequired,
+};
