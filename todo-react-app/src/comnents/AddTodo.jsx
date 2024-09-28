@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { MdAddShoppingCart } from "react-icons/md";
 
 export default function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState();
-  const [todoDate, setTodoDate] = useState();
+  const [todoName, setTodoName] = useState("");
+  const [todoDate, setTodoDate] = useState("");
   const handleNameChange = (event) => {
     setTodoName(event.target.value);
   };
@@ -34,7 +35,7 @@ export default function AddTodo({ onNewItem }) {
             className="btn btn-success hk-btn"
             onClick={handleAddButtonClicked}
           >
-            Add
+            <MdAddShoppingCart />
           </button>
         </div>
       </div>
