@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { MdAddShoppingCart } from "react-icons/md";
+import { TodoItemsContext } from "../store/todo-item-store";
 
-export default function AddTodo({ onNewItem }) {
+export default function AddTodo() {
   const [todoName, setTodoName] = useState("");
   const [todoDate, setTodoDate] = useState("");
+  const { addNewItem } = useContext(TodoItemsContext);
   const handleNameChange = (event) => {
     setTodoName(event.target.value);
   };
@@ -11,7 +13,7 @@ export default function AddTodo({ onNewItem }) {
     setTodoDate(event.target.value);
   };
   const handleAddButtonClicked = () => {
-    onNewItem(todoName, todoDate);
+    addNewItem(todoName, todoDate);
     setTodoDate("");
     setTodoName("");
   };
